@@ -47,11 +47,11 @@ const switchTab = (id) => {
     document.getElementById("liked").style.display = "none";
 
     displayReportedPosts();
+
   }
 };
 
 const createPost = (post) => {
-  console.log(post);
   const image = post.image;
   const div = document.createElement("article");
   div.classList.add("post");
@@ -152,9 +152,10 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  posts.forEach((post) => {
+  reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
+
   });
 };
 
